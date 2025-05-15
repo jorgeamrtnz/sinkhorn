@@ -32,7 +32,7 @@ def construct_cost(
         X2 = (x ** 2).sum(axis=1)[:, None]
         Y2 = (y ** 2).sum(axis=1)[None, :]
         M = X2 + Y2 - 2 * x @ y.T
-        return np.maximum(M, 0.0)  # Ensure non-negativity
+        return np.maximum(M, 0.0)
 
     # General case: M_ij = sum_k |x_ik - y_jk|^p
     diff = np.abs(x[:, None, :] - y[None, :, :]) ** p
