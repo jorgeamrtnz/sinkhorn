@@ -83,14 +83,3 @@ def sinkhorn_distance(M: np.ndarray, λ: float, r: np.ndarray, C: np.ndarray, *,
     P = np.exp((μ[:, None] + v[None, :] - M) / eps)
 
     return np.sum(P * M)
-
-
-# toy example: two 1-D Gaussians
-n = 50
-x = np.linspace(-2, 2, n)
-M = utils.construct_cost(x, x, 1)     # p = 1 cost
-r = np.exp(-x**2); r /= r.sum()
-c = np.exp(-(x - 1)**2); c /= c.sum()
-
-d = sinkhorn_distance(M, λ=10.0, r=r, C=c)
-print(f"Sinkhorn distance ≈ {d:.4f}")
