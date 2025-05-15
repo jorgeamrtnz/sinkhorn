@@ -1,5 +1,5 @@
 import numpy as np
-from utils import construct_cost
+from . import utils
 
 def sinkhorn_distance(M: np.ndarray, λ: float, r: np.ndarray, C: np.ndarray, *, max_iter: int=1000, δ: float=1e-9) -> np.ndarray:
     """
@@ -54,7 +54,7 @@ def sinkhorn_distance(M: np.ndarray, λ: float, r: np.ndarray, C: np.ndarray, *,
 # toy example: two 1-D Gaussians
 n = 50
 x = np.linspace(-2, 2, n)
-M = construct_cost(x, x, 1)     # p = 1 cost
+M = utils.construct_cost(x, x, 1)     # p = 1 cost
 r = np.exp(-x**2); r /= r.sum()
 c = np.exp(-(x - 1)**2); c /= c.sum()
 
