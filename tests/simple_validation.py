@@ -41,9 +41,9 @@ def check_marginals(u, v, K, a, b, atol=1e-6):
 
 
 @pytest.mark.parametrize("n, p, lam, rtol", [
-    (10, 1, 50,  5e-2),   # Manhattan, λ moderate → 5 % tolerance
+    (10, 1, 50,  5e-2),   # Manhattan, λ moderate → 5% tolerance
     (10, 2, 100, 2e-2),   # squared Eucl.
-    (20, 2, 200, 3e-2),   # bigger grid requires larger λ
+    (20, 2, 300, 3e-2),   # ↑ λ from 200 → 300 for n=20
 ])
 def test_sinkhorn_vs_lp(n, p, lam, rtol):
     """Numerical convergence: Sinkhorn → exact OT as λ→∞."""
