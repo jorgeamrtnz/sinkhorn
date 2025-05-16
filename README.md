@@ -2,7 +2,7 @@
 
 This project provides a from-scratch implementation of the Sinkhorn algorithm for efficiently approximating the p-Wasserstein distance between probability measures. It includes two algorithm variants, performance benchmarks against exact solvers and Greenkhorn, and basic validation tests.
 
-## 📘 Background
+## Background
 
 Optimal transport (OT) seeks the minimum-cost transformation between two probability measures. The Wasserstein metric defines this cost, but exact computation is expensive for large supports. Cuturi (2013) introduced an entropic regularization technique, giving the **Sinkhorn distance**, a fast, approximate OT solver with drastically reduced computational cost.
 
